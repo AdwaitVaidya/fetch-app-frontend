@@ -263,7 +263,6 @@ const SearchPage: React.FC = () => {
           };
         } else {
           setZipCodes([]);
-          setZipCode("");
           delete loc.geoBoundingBox;
         }
         if (city !== "" && city !== null) {
@@ -276,13 +275,16 @@ const SearchPage: React.FC = () => {
         } else {
           loc.states = [state];
         }
+
         const re = (lo: Location[]) => {
           lo.map((l) => {
             setZipCodes((prevList) => [...prevList, l.zip_code]);
           });
         };
+        setZipCodes((prevList) => [...prevList, zipCode]);
 
         const res: LocationSearchResponse = await getLocationSearch(loc);
+
         re(res.results);
       } catch (error) {
         console.error("Error fetching dog breeds:", error);
