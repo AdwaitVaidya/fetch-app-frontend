@@ -243,6 +243,10 @@ const SearchPage: React.FC = () => {
         const loc: LocationSearchRequestBody = {};
         loc.size = 29;
         if (zipCode !== "") {
+          if (zipCode.length < 5){
+            return
+          }
+
           const response: Location[] = await getLocations([zipCode]);
 
           const tr = {
