@@ -1,7 +1,7 @@
 {
+  "homepage": "https://adwaitvaidya.github.io/fetch-app-frontend/",
   "name": "fetch-app-frontend",
   "version": "0.1.0",
-  "homepage": "https://adwaitvaidya.github.io/fetch-app-frontend/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.0",
