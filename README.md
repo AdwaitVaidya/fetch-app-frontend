@@ -1,7 +1,6 @@
 ## Live Application URL
 
 ### https://adwaitvaidya.github.io/fetch-app-frontend/
-This URL has the application deployed in
 
 
 
