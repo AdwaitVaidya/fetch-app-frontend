@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import LoginScreen from "./components/LoginScreen";
-import SearchPage from "./components/SearchPage";
+import LoginScreen from "./pages/LoginScreen";
+import SearchPage from "./pages/SearchPage";
 
 const App: React.FC = () => {
   const [authenticated, setAuthenticated] = useState(false);

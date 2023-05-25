@@ -25,6 +25,7 @@ const Login: React.FC<LoginScreenProps> = ({ setAuthenticated }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [done, setDone] = useState(false);
+  
   const navigate = useNavigate();
   const defaultTheme = createTheme();
 
