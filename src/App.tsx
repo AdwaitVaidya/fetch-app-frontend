@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import LoginScreen from "./components/LoginScreen";
+import SearchPage from "./components/SearchPage";
+import AppContext from "./AppContext";
 
-function App() {
+const App: React.FC = () => {
+  const [authenticated, setAuthenticated] = useState(false);
+
+  const sharedData = {
+    theme: "dark",
+    user: {
+      name: "John Doe",
+      email: "john.doe@example.com",
+    },
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContext.Provider value={sharedData.theme}>
+      <Routes>
+        <Route
+          path="/"
+          element={<LoginScreen setAuthenticated={setAuthenticated} />}
+        />
+        <Route path="/search" element={<SearchPage />} />
+      </Routes>
+    </AppContext.Provider>
   );
-}
+};
 
 export default App;
